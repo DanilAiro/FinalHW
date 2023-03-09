@@ -10,6 +10,8 @@ internal class Methods
     public int ReadInt(string argument)
     {
       int i;
+      Console.Write($"Введите {argument}: ");
+
       while(!int.TryParse(Console.ReadLine(), out i))
       {
         Console.Write("Не смогли получить целое число, повторите");
@@ -57,6 +59,35 @@ internal class Methods
       }
 
       return word;
+    }
+
+    public string[] GetArrayOfStringLessThanLength(int length, string[] arr)
+    {
+      string[] array = new string[GetCountOfWordLessThanLength(length, arr)];
+      int k = 0;
+
+      for (int j = 0; j < arr.Length; j++)
+      {
+        if (arr[j].Length < 4)
+        {
+          array[k] = arr[j];
+          k++;
+        }
+      }
+
+      return array;
+    }
+
+    public int GetCountOfWordLessThanLength(int length, string[] arr)
+    {
+      int count = 0;
+
+      for (int i = 0; i < arr.Length; i++)
+      {
+        if (arr[i].Length < length) count++;
+      }
+
+      return count;
     }
   #endregion
 
