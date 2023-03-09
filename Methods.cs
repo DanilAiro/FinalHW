@@ -20,6 +20,23 @@ internal class Methods
       return i;
     }
 
+    public void PrintArray(string[] array, string arg)
+    {
+      Console.Write($"{arg} ");
+
+      for (int i = 0; i < array.Length; i++)
+      {
+        if (i == array.Length - 1)
+        {
+          Console.WriteLine($"{array[i]}");
+        }
+        else
+        {
+          Console.Write($"{array[i]}, ");
+        }
+      }
+    }
+
     public string[] GetFilledArrayOfString(int length)
     {
       string[] array = new string[length];
@@ -51,9 +68,11 @@ internal class Methods
       string[] array = new string[] {"a", "b", "c", "d", "e", "f", "g", "h", "i", 
                                      "j", "k", "l", "m", "n", "o", "p", "q", "r", 
                                      "s", "t", "u", "v", "w", "x", "y", "z", "0", 
-                                     "1", "2", "3", "4", "5", "6", "7", "8", "9"}; 
+                                     "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+      int minRandom = 1;
+      int maxRandom = 7;
 
-      for(int i = 0; i < random.Next(1, 7); i++)
+      for(int i = 0; i < random.Next(minRandom, maxRandom); i++)
       {
         word += array[random.Next(0, array.Length)];
       }
@@ -92,6 +111,11 @@ internal class Methods
   #endregion
 
   #region MethodsForProgram
+
+  public bool ToExit()
+  {
+    return false;
+  }
 
   #endregion
 }
