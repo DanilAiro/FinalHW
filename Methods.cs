@@ -87,7 +87,7 @@ internal class Methods
 
       for (int j = 0; j < arr.Length; j++)
       {
-        if (arr[j].Length < 4)
+        if (arr[j].Length < length)
         {
           array[k] = arr[j];
           k++;
